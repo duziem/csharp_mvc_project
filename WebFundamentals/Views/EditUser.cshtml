@@ -1,0 +1,11 @@
+﻿@model User
+
+<form asp-action="UpdateUser" asp-controller="User" method="post" >
+    <input type="text" name="UserId" id="UserId" placeholder="UserId" />
+    <input type="password" name="Password" id="Password" placeholder="Password" />
+    <input type="text" name="FirstName" id="FirstName" placeholder="FirstName" />
+    <input type="text" name="LastName" id="LastName" placeholder="LastName" />
+    <input type="text" name="Email" id="Email" placeholder="Email" />
+
+    <input type="submit" value="Update"/>
+</form>

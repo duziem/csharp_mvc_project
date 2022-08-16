@@ -1,0 +1,43 @@
+﻿@*@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>*@
+
+@{
+    List<User> userlist = new UserService().GetUsers();
+}
+
+<form asp-action="AddUser" asp-controller="User" method="post" >
+    <input type="text" name="UserId" id="UserId" placeholder="UserId" />
+    <input type="password" name="Password" id="Password" placeholder="Password" />
+    <input type="text" name="FirstName" id="FirstName" placeholder="FirstName" />
+    <input type="text" name="LastName" id="LastName" placeholder="LastName" />
+    <input type="text" name="Email" id="Email" placeholder="Email" />
+
+    <input type="submit" value="Save"/>
+</form>
+
+<table>
+    <thead>
+        <tr>
+            <td>UserId</td>
+            <td>FirstName</td>
+            <td>LastName</td>
+            <td>Email</td>
+        </tr>
+    </thead>
+
+    @foreach (User u in userlist)
+    {
+        <tr>
+            <td>@u.UserId</td>
+            <td>@u.FirstName</td>
+            <td>@u.LastName</td>
+            <td>@u.Email</td>
+        </tr>
+    }
+</table>
