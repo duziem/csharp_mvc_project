@@ -22,7 +22,7 @@ namespace WebFundamentals.Service
 
                 _context.Users.Add(user);
                 _context.SaveChanges();
-
+                
                 return user;
 
             }catch(Exception err)
